@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f7f7f5" />
+    <title>Japan — Destination guide | Wanderlust</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <nav class="navbar" aria-label="Main navigation">
+      <div class="nav-container">
+        <a href="./index.html" class="brand-logo" aria-label="Wanderlust landing page"><span class="wordmark-w">W</span><span>WANDERLUST</span></a>
+        <ul class="nav-links" id="primary-navigation">
+          <li>
+            <a href="./index.html">Home</a>
+          </li>
+          <li>
+            <a href="./explore.html">Explore</a>
+          </li>
+          <li>
+            <a href="./preferences.html">Preferences</a>
+          </li>
+          <li>
+            <a href="./destination.html" class="active" aria-current="page">Destination</a>
+          </li>
+          <li>
+            <a href="./about.html">About</a>
+          </li>
+        </ul>
+        <div class="nav-actions">
+          <a class="btn btn-navy" href="./airlines.html?destination=Tokyo">Book now</a>
+        </div>
+        <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-controls="primary-navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </nav>
+    <main class="page-main destination-page">
+      <section class="container place-picker" aria-label="Choose a destination to view its travel guide">
+        <label for="destination-picker">Destination guide</label>
+        <select id="destination-picker" aria-label="Choose a destination">
+          <option value="Japan">Japan</option>
+          <option value="Patagonia">Patagonia, Chile</option>
+          <option value="Amalfi">Amalfi Coast, Italy</option>
+          <option value="Cappadocia">Cappadocia, Türkiye</option>
+          <option value="Santorini">Santorini, Greece</option>
+          <option value="Bali">Bali, Indonesia</option>
+          <option value="Norway">Tromsø, Norway</option>
+          <option value="Marrakech">Marrakech, Morocco</option>
+          <option value="Dolomites">Dolomites, Italy</option>
+          <option value="Palawan">Palawan, Philippines</option>
+          <option value="ElNido">El Nido, Philippines</option>
+          <option value="Coron">Coron, Philippines</option>
+          <option value="Siargao">Siargao, Philippines</option>
+          <option value="Banaue">Banaue, Philippines</option>
+          <option value="Batanes">Batanes, Philippines</option>
+          <option value="Cebu">Cebu, Philippines</option>
+          <option value="Bohol">Bohol, Philippines</option>
+          <option value="Camiguin">Camiguin, Philippines</option>
+          <option value="Dumaguete">Dumaguete, Philippines</option>
+          <option value="Yukon">Yukon, Canada</option>
+        </select>
+        <span>Choose a place to update local facts, practical tips and travel ideas.</span>
+      </section>
+      <section class="container destination-top">
+        <div class="destination-hero-image">
+          <img id="destination-image" src="./KYOTO,%20JAPAN.jpg" alt="Autumn leaves and a pagoda looking toward Mount Fuji in Japan" /><span class="destination-rating">✦ 4.9 <small>(1.2k reviews)</small></span><span class="destination-from" id="destination-price">FROM $2,450 / PP</span>
+          <div class="destination-title">
+            <span id="destination-kicker">LAND OF THE RISING SUN</span>
+            <h1 id="destination-name">
+              Japan
+            </h1>
+            <p id="destination-description">
+              An elegant fusion of timeless traditions, striking natural landscapes, and hyper-modern urban rhythm.
+            </p>
+          </div>
+        </div>
+        <aside class="fact-card">
+          <span class="eyebrow">Quick ledger</span>
+          <h2>
+            Destination facts
+          </h2>
+          <dl>
+            <div>
+              <dt>
+                Local population
+              </dt>
+              <dd id="destination-population">
+                125.7 Million
+              </dd>
+            </div>
+            <div>
+              <dt>
+                Language
+              </dt>
+              <dd id="destination-language">
+                Japanese (Nihongo)
+              </dd>
+            </div>
+            <div>
+              <dt>
+                Currency
+              </dt>
+              <dd id="destination-currency">
+                Japanese Yen (¥)
+              </dd>
+            </div>
+            <div>
+              <dt>
+                Time zone
+              </dt>
+              <dd id="destination-timezone">
+                JST (UTC +9)
+              </dd>
+            </div>
+            <div>
+              <dt>
+                Capital
+              </dt>
+              <dd id="destination-capital">
+                Tokyo
+              </dd>
+            </div>
+          </dl>
+          <a class="text-link" id="destination-flights-link" href="./airlines.html?destination=Tokyo">Compare flights <span aria-hidden="true">→</span></a>
+        </aside>
+      </section>
+      <section class="container destination-details">
+        <article class="season-card">
+          <div class="section-card-heading">
+            <div>
+              <span class="eyebrow">Chronology</span>
+              <h2>
+                Optimal seasons to visit
+              </h2>
+            </div>
+            <span class="season-tag">SPRING & AUTUMN PEAK</span>
+          </div>
+          <div class="month-row" role="group" aria-label="Choose the month to visit">
+            <button type="button" data-month="Jan" aria-pressed="false">Jan</button>
+            <button type="button" data-month="Feb" aria-pressed="false">Feb</button>
+            <button type="button" data-month="Mar" aria-pressed="false">Mar</button>
+            <button type="button" class="season-good is-active" data-month="Apr" aria-pressed="true">Apr</button>
+            <button type="button" data-month="May" aria-pressed="false">May</button>
+            <button type="button" data-month="Jun" aria-pressed="false">Jun</button>
+            <button type="button" data-month="Jul" aria-pressed="false">Jul</button>
+            <button type="button" data-month="Aug" aria-pressed="false">Aug</button>
+            <button type="button" data-month="Sep" aria-pressed="false">Sep</button>
+            <button type="button" class="season-good" data-month="Oct" aria-pressed="false">Oct</button>
+            <button type="button" class="season-good" data-month="Nov" aria-pressed="false">Nov</button>
+            <button type="button" data-month="Dec" aria-pressed="false">Dec</button>
+          </div>
+          <div class="season-bands">
+            <span>WINTER QUIET</span><span class="spring-band">SPRING COLOR</span><span>SUMMER OUTDOORS</span><span class="autumn-band">AUTUMN TRAILS</span>
+          </div>
+          <p class="season-note" id="season-note" aria-live="polite">
+            ✦ Cherry blossoms (10°C – 18°C) &nbsp; · &nbsp; Autumn foliage (15°C – 22°C)
+          </p>
+        </article>
+        <aside class="respect-card">
+          <span class="eyebrow">Cultural respect</span>
+          <h2 id="destination-respect-title">
+            What not to do in Japan
+          </h2>
+          <ul id="destination-rules">
+            <li>
+              <span>▤</span>
+              <div>
+                <strong>No tipping</strong><small>Highly offensive; service charge is already included.</small>
+              </div>
+            </li>
+            <li>
+              <span>⌁</span>
+              <div>
+                <strong>No shoes indoors</strong><small>Swap for slippers at genkan entryways.</small>
+              </div>
+            </li>
+            <li>
+              <span>◉</span>
+              <div>
+                <strong>No eating while walking</strong><small>Consume drinks and snacks near vending machines.</small>
+              </div>
+            </li>
+            <li>
+              <span>♬</span>
+              <div>
+                <strong>Mind your chopsticks</strong><small>Never pass food directly or stick chopsticks upright.</small>
+              </div>
+            </li>
+            <li>
+              <span>⌖</span>
+              <div>
+                <strong>Train quiet etiquette</strong><small>Set phones to silent; avoid speaking aloud.</small>
+              </div>
+            </li>
+          </ul>
+        </aside>
+        <article class="experience-card">
+          <div class="section-card-heading">
+            <div>
+              <span class="eyebrow">Selected atelier</span>
+              <h2>
+                Curated top experiences
+              </h2>
+            </div>
+          </div>
+          <div class="experience-list" id="destination-experiences">
+            <article class="experience-row">
+              <img src="./KYOTO,%20JAPAN.jpg" alt="" loading="lazy" /><span><strong>Temple Meditation in Kyoto</strong><small>Private access to a Buddhist temple at dawn</small><small>◷ 4 hours · included: guide, tea, transfer</small></span><b>$140</b>
+            </article>
+            <article class="experience-row">
+              <img src="./TOKYO,%20JAPAN.jpg" alt="" loading="lazy" /><span><strong>Tsukiji Fish Market Tour</strong><small>Led by a licensed sushi master guide</small><small>◷ 3 hours · included: guide, tastings</small></span><b>$110</b>
+            </article>
+            <article class="experience-row">
+              <img src="./DOLOMITES,%20ITALY.jpg" alt="" loading="lazy" /><span><strong>Onsen Bathing in Hakone</strong><small>Private hot spring overlooking Mt. Fuji</small><small>◷ Full day · included: guide, transfers</small></span><b>$120</b>
+            </article>
+          </div>
+        </article>
+        <article class="transit-card">
+          <span class="eyebrow">Transit ledger</span>
+          <h2 id="destination-transit-title">
+            Getting around Japan
+          </h2>
+          <ul id="destination-transit">
+            <li>
+              <strong>JR Rail Pass:</strong> Essential for unlimited Shinkansen bullet travel.
+            </li>
+            <li>
+              <strong>Taxi Travel:</strong> Elegant, clean, automatic doors. Average fare ~$8–$15.
+            </li>
+            <li>
+              <strong>Walkability:</strong> Highly pedestrianized cities. Pack sleek slippers.
+            </li>
+          </ul>
+        </article>
+        <a class="concierge-card" id="destination-concierge-link" href="./airlines.html?destination=Tokyo"><span class="eyebrow eyebrow-light">A journey, made personal</span><strong>Ready to design your<br />customized route?</strong><small>Speak directly with our regional concierge experts.</small><span class="concierge-arrow" aria-hidden="true">↗</span></a>
+      </section>
+      <section class="container destination-story">
+        <div>
+          <span class="eyebrow"><span class="eyebrow-dot"></span>A country of contrasts</span>
+          <h2 id="destination-story-title">
+            Take the long way<br />through Japan.
+          </h2>
+        </div>
+        <p id="destination-story-copy">
+          Begin with a quiet morning beneath Kyoto's temple eaves. Follow the rail north through cedar forests and hot-spring towns. End somewhere bright and sleepless, with the city still unfolding around you. Our local guides make room for both the iconic and the unexpectedly personal.
+        </p>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div class="footer-col brand-col">
+          <a href="./index.html" class="brand-logo text-white"><span class="wordmark-w">W</span><span>WANDERLUST</span></a>
+          <p class="brand-desc">
+            Bespoke itineraries, deep local connections, and unforgettable moments across six continents.
+          </p>
+        </div>
+        <div class="footer-col links-col">
+          <h4>
+            DESTINATIONS
+          </h4>
+          <ul>
+            <li>
+              <a href="./explore.html">Explore all</a>
+            </li>
+            <li>
+              <a href="./destination.html">Japan</a>
+            </li>
+            <li>
+              <a href="./explore.html">Asia</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-col links-col">
+          <h4>
+            COMPANY
+          </h4>
+          <ul>
+            <li>
+              <a href="./about.html">Our story</a>
+            </li>
+            <li>
+              <a href="./preferences.html">Preferences</a>
+            </li>
+            <li>
+              <a href="./airlines.html">Flight partners</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-col contact-col">
+          <h4>
+            INQUIRIES
+          </h4>
+          <div class="contact-block">
+            <span class="contact-label">CONCIERGE DESK</span><a href="mailto:explore@wanderlustjourneys.com" class="contact-value">explore@wanderlustjourneys.com</a>
+          </div>
+          <div class="contact-block">
+            <span class="contact-label">DIRECT LINE</span><a href="tel:+18004926337" class="contact-value">+1 (800) 492-6337</a>
+          </div>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <p class="copyright">
+          © 2026 Wanderlust Journeys LLC. All rights reserved.
+        </p>
+        <div class="social-links">
+          <a href="./explore.html">Explore places</a><a href="./preferences.html">Edit preferences</a><a href="./airlines.html">Compare flights</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

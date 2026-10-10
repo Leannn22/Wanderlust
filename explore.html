@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f7f7f5" />
+    <title>Explore destinations | Wanderlust</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <nav class="navbar" aria-label="Main navigation">
+      <div class="nav-container">
+        <a href="./index.html" class="brand-logo" aria-label="Wanderlust landing page"><span class="wordmark-w">W</span><span>WANDERLUST</span></a>
+        <ul class="nav-links" id="primary-navigation">
+          <li>
+            <a href="./index.html">Home</a>
+          </li>
+          <li>
+            <a href="./explore.html" class="active" aria-current="page">Explore</a>
+          </li>
+          <li>
+            <a href="./preferences.html">Preferences</a>
+          </li>
+          <li>
+            <a href="./destination.html">Destination</a>
+          </li>
+          <li>
+            <a href="./about.html">About</a>
+          </li>
+        </ul>
+        <div class="nav-actions">
+          <a class="btn btn-navy" href="./airlines.html">Plan your escape</a>
+        </div>
+        <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-controls="primary-navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </nav>
+    <main class="page-main">
+      <section class="page-intro container">
+        <div>
+          <span class="eyebrow"><span class="eyebrow-dot"></span>Curated for your kind of wonder</span>
+          <h1>
+            Find your somewhere.
+          </h1>
+          <p>
+            Thoughtfully chosen places to take the long way, stay a little longer, and see the world differently.
+          </p>
+        </div>
+        <a class="intro-side-link" href="./preferences.html">Not sure where to go?<br /><strong>Set your preferences →</strong></a>
+      </section>
+      <section class="container explore-controls" aria-label="Filter destinations">
+        <label class="search-field"><span aria-hidden="true">⌕</span><span class="sr-only">Search destinations</span><input id="destination-search" type="search" placeholder="Search a place or feeling..." /></label>
+        <p class="filter-hint">Mix interests to create your own shortlist. Location is optional; local means a Philippine escape, international means a journey abroad.</p>
+        <div class="filter-row" role="group" aria-label="Filter by travel style">
+          <button class="filter-chip is-selected" type="button" data-filter="all" aria-pressed="true">All journeys <span>✓</span></button>
+          <button class="filter-chip" type="button" data-filter="realm-local" aria-pressed="false">Closer to home <span>＋</span></button>
+          <button class="filter-chip" type="button" data-filter="realm-international" aria-pressed="false">Further afield <span>＋</span></button>
+          <button class="filter-chip" type="button" data-filter="culture" aria-pressed="false">Culture <span>＋</span></button>
+          <button class="filter-chip" type="button" data-filter="nature" aria-pressed="false">Wild & open <span>＋</span></button>
+          <button class="filter-chip" type="button" data-filter="coast" aria-pressed="false">Coastlines <span>＋</span></button>
+          <button class="filter-chip" type="button" data-filter="food" aria-pressed="false">Food & craft <span>＋</span></button>
+          <button class="filter-chip" type="button" data-filter="wellness" aria-pressed="false">Slow & restore <span>＋</span></button>
+          <button class="filter-chip" type="button" data-filter="adventure" aria-pressed="false">Active days <span>＋</span></button>
+          <label class="sort-field">Budget <select id="budget-filter" aria-label="Filter by indicative budget"><option value="any">Any budget</option><option value="1500">Up to $1,500</option><option value="2500">Up to $2,500</option><option value="4000">Up to $4,000</option></select></label>
+          <label class="sort-field">Trip length <select id="length-filter" aria-label="Filter by trip length"><option value="any">Any length</option><option value="short">4–6 days</option><option value="week">7–10 days</option><option value="long">11+ days</option></select></label>
+          <label class="sort-field">Sort by <select id="destination-sort" aria-label="Sort destinations"><option value="match">Our best match</option><option value="rating">Highest rated</option><option value="cost">Lowest budget</option><option value="name">Destination A–Z</option></select></label>
+        </div>
+      </section>
+      <section class="container explore-results">
+        <div class="results-heading">
+          <div>
+            <span class="eyebrow"><span class="eyebrow-dot"></span>Made for the mood</span>
+            <h2>
+              Places with a point of view
+            </h2>
+          </div>
+          <p id="destination-count" aria-live="polite">
+            12 destinations
+          </p>
+        </div>
+        <div class="explore-grid" id="destination-grid">
+          <article class="explore-card" data-name="Kyoto Japan" data-region="asia" data-map-region="asia" data-realm="international" data-vibe="culture,food,wellness" data-cost="1490" data-days="8" data-rating="9.8" data-match="1">
+            <a href="./destination.html?place=Japan" class="explore-image"><img src="./KYOTO,%20JAPAN.jpg" alt="Pagoda framed by autumn maple trees in Kyoto" loading="lazy" /><span class="image-label">Cultural immersion</span><span class="image-open" aria-hidden="true">↗</span></a>
+            <div class="explore-card-body">
+              <div class="card-meta">
+                <span class="location">KYOTO, JAPAN</span><span class="rating">9.8 / 10</span>
+              </div>
+              <h3>
+                Kyoto Temple Lanes & Imperial Gardens
+              </h3>
+              <p>
+                Lantern-lit lanes, quiet temples, and the colors of a changing season.
+              </p>
+              <div class="card-bottom">
+                <span>From <strong>$1,490</strong></span><a href="./destination.html?place=Japan">Explore destination <span aria-hidden="true">→</span></a>
+              </div>
+            </div>
+          </article>
+          <article class="explore-card" data-name="Patagonia Chile" data-region="south-america" data-map-region="americas" data-realm="international" data-vibe="nature,adventure" data-cost="2180" data-days="12" data-rating="9.6" data-match="2">
+            <a href="./destination.html?place=Patagonia" class="explore-image"><img src="./PATAGONIA,%20CHILE.jpg" alt="Snow-capped peaks and a vivid blue Patagonian lake" loading="lazy" /><span class="image-label">Wild & open</span><span class="image-open" aria-hidden="true">↗</span></a>
+            <div class="explore-card-body">
+              <div class="card-meta">
+                <span class="location">PATAGONIA, CHILE</span><span class="rating">9.6 / 10</span>
+              </div>
+              <h3>
+                Granite Walls & Blue Lakes
+              </h3>
+              <p>
+                Big skies, glacier-fed water, and trails with room to breathe.
+              </p>
+              <div class="card-bottom">
+                <span>From <strong>$2,180</strong></span><a href="./destination.html?place=Patagonia">Explore destination <span aria-hidden="true">→</span></a>
+              </div>
+            </div>
+          </article>
+          <article class="explore-card" data-name="Amalfi Coast Italy" data-region="mediterranean" data-map-region="europe" data-realm="international" data-vibe="coast,food,wellness" data-cost="1820" data-days="7" data-rating="9.4" data-match="3">
+            <a href="./destination.html?place=Amalfi" class="explore-image"><img src="./AMALFI%20COAST,%20ITALY.jpg" alt="Amalfi Coast village above the blue Mediterranean" loading="lazy" /><span class="image-label">Coastal slow living</span><span class="image-open" aria-hidden="true">↗</span></a>
+            <div class="explore-card-body">
+              <div class="card-meta">
+                <span class="location">AMALFI COAST, ITALY</span><span class="rating">9.4 / 10</span>
+              </div>
+              <h3>
+                Cliffs Draped in Yellow
+              </h3>
+              <p>
+                Sun-warmed terraces, family-run trattorias, and the long blue hour.
+              </p>
+              <div class="card-bottom">
+                <span>From <strong>$1,820</strong></span><a href="./destination.html?place=Amalfi">Explore destination <span aria-hidden="true">→</span></a>
+              </div>
+            </div>
+          </article>
+          <article class="explore-card" data-name="Cappadocia Turkey" data-region="europe" data-map-region="europe" data-realm="international" data-vibe="nature,adventure,culture" data-cost="1360" data-days="6" data-rating="9.2" data-match="4">
+            <a href="./destination.html?place=Cappadocia" class="explore-image"><img src="./CAPPOCADIA,%20TURKEY.jpg" alt="Colorful hot-air balloons above Cappadocia's rock formations" loading="lazy" /><span class="image-label">A sky full of stories</span><span class="image-open" aria-hidden="true">↗</span></a>
+            <div class="explore-card-body">
+              <div class="card-meta">
+                <span class="location">CAPPADOCIA, TURKEY</span><span class="rating">9.2 / 10</span>
+              </div>
+              <h3>
+                Rising Over Fairy Chimneys
+              </h3>
+              <p>
+                Ancient valleys, cave hotels, and first light from a hot-air balloon.
+              </p>
+              <div class="card-bottom">
+                <span>From <strong>$1,360</strong></span><a href="./destination.html?place=Cappadocia">Explore destination <span aria-hidden="true">→</span></a>
+              </div>
+            </div>
+          </article>
+          <article class="explore-card" data-name="Santorini Greece" data-region="mediterranean" data-map-region="europe" data-realm="international" data-vibe="coast,food,wellness" data-cost="1610" data-days="7" data-rating="9.1" data-match="5">
+            <a href="./destination.html?place=Santorini" class="explore-image"><img src="./SANTORINI,%20GREECE.jpg" alt="Whitewashed Greek island village above the sea" loading="lazy" /><span class="image-label">Island time</span><span class="image-open" aria-hidden="true">↗</span></a>
+            <div class="explore-card-body">
+              <div class="card-meta">
+                <span class="location">SANTORINI, GREECE</span><span class="rating">9.1 / 10</span>
+              </div>
+              <h3>
+                Blue Domes by the Aegean
+              </h3>
+              <p>
+                Sea-salted afternoons, volcanic vineyards, and a view worth lingering for.
+              </p>
+              <div class="card-bottom">
+                <span>From <strong>$1,610</strong></span><a href="./destination.html?place=Santorini">Explore destination <span aria-hidden="true">→</span></a>
+              </div>
+            </div>
+          </article>
+          <article class="explore-card" data-name="Bali Indonesia" data-region="asia" data-map-region="asia" data-realm="international" data-vibe="nature,wellness,culture" data-cost="1240" data-days="8" data-rating="9.0" data-match="6">
+            <a href="./destination.html?place=Bali" class="explore-image"><img src="./BALI,%20INDONESIA.jpg" alt="Turquoise Bali cove framed by tropical cliffs" loading="lazy" /><span class="image-label">Tropical stillness</span><span class="image-open" aria-hidden="true">↗</span></a>
+            <div class="explore-card-body">
+              <div class="card-meta">
+                <span class="location">BALI, INDONESIA</span><span class="rating">9.0 / 10</span>
+              </div>
+              <h3>
+                Quiet Mornings in Bali
+              </h3>
+              <p>
+                Green rice terraces, saltwater swims, and space to find your rhythm.
+              </p>
+              <div class="card-bottom">
+                <span>From <strong>$1,240</strong></span><a href="./destination.html?place=Bali">Explore destination <span aria-hidden="true">→</span></a>
+              </div>
+            </div>
+          </article>
+          <article class="explore-card" data-name="Tromso Norway" data-region="nordics" data-map-region="europe" data-realm="international" data-vibe="nature,adventure" data-cost="2040" data-days="6" data-rating="9.5" data-match="7">
+            <a href="./destination.html?place=Norway" class="explore-image"><img src="./TROMS%C3%98,%20NORWAY.jpg" alt="Northern Norway under an expansive arctic sky" loading="lazy" /><span class="image-label">Arctic wilderness</span><span class="image-open" aria-hidden="true">↗</span></a>
+            <div class="explore-card-body">
+              <div class="card-meta">
+                <span class="location">TROMSØ, NORWAY</span><span class="rating">9.5 / 10</span>
+              </div>
+              <h3>
+                Beneath the Northern Lights
+              </h3>
+              <p>
+                Fjord-side saunas, midnight skies, and a little arctic magic.
+              </p>
+              <div class="card-bottom">
+                <span>From <strong>$2,040</strong></span><a href="./destination.html?place=Norway">Explore destination <span aria-hidden="true">→</span></a>
+              </div>
+            </div>
+          </article>
+          <article class="explore-card" data-name="Marrakech Morocco" data-region="africa" data-map-region="africa" data-realm="international" data-vibe="culture,food,desert" data-cost="1520" data-days="7" data-rating="9.3" data-match="8">
+            <a href="./destination.html?place=Marrakech" class="explore-image"><img src="./MARRAKECH,%20MOROCCO.jpg" alt="Warm desert landscape near Marrakech" loading="lazy" /><span class="image-label">Color & craft</span><span class="image-open" aria-hidden="true">↗</span></a>
+            <div class="explore-card-body">
+              <div class="card-meta">
+                <span class="location">MARRAKECH, MOROCCO</span><span class="rating">9.3 / 10</span>
+              </div>
+              <h3>
+                Marrakech's Medina, Riads & Atlas Foothills
+              </h3>
+              <p>
+                Courtyard riads, spice-scented souks, and a night beneath the stars.
+              </p>
+              <div class="card-bottom">
+                <span>From <strong>$1,520</strong></span><a href="./destination.html?place=Marrakech">Explore destination <span aria-hidden="true">→</span></a>
+              </div>
+            </div>
+          </article>
+          <article class="explore-card" data-name="Dolomites Italy" data-region="europe" data-map-region="europe" data-realm="international" data-vibe="nature,adventure,wellness" data-cost="1780" data-days="7" data-rating="9.7" data-match="9">
+            <a href="./destination.html?place=Dolomites" class="explore-image"><img src="./DOLOMITES,%20ITALY.jpg" alt="A mountain meadow and dramatic Dolomites peaks" loading="lazy" /><span class="image-label">Alpine retreat</span><span class="image-open" aria-hidden="true">↗</span></a>
+            <div class="explore-card-body">
+              <div class="card-meta">
+                <span class="location">DOLOMITES, ITALY</span><span class="rating">9.7 / 10</span>
+              </div>
+              <h3>
+                Stillness in the Dolomites
+              </h3>
+              <p>
+                High meadow trails, cozy mountain lodges, and crisp alpine air.
+              </p>
+              <div class="card-bottom">
+                <span>From <strong>$1,780</strong></span><a href="./destination.html?place=Dolomites">Explore destination <span aria-hidden="true">→</span></a>
+              </div>
+            </div>
+          </article>
+          <article class="explore-card" data-name="Palawan Philippines" data-region="asia" data-map-region="philippines" data-realm="local" data-vibe="coast,adventure,wellness" data-cost="1340" data-days="6" data-rating="9.6" data-match="10">
+            <a href="./destination.html?place=Palawan" class="explore-image"><img src="./PALAWAN,%20PHILIPPINES.jpg" alt="A secluded beach and tropical water in Palawan" loading="lazy" /><span class="image-label">Island escape</span><span class="image-open" aria-hidden="true">↗</span></a>
+            <div class="explore-card-body">
+              <div class="card-meta">
+                <span class="location">PALAWAN, PHILIPPINES</span><span class="rating">9.6 / 10</span>
+              </div>
+              <h3>
+                Hidden Lagoons of Palawan
+              </h3>
+              <p>
+                Quiet coves, limestone cliffs, and clear water in every direction.
+              </p>
+              <div class="card-bottom">
+                <span>From <strong>$1,340</strong></span><a href="./destination.html?place=Palawan">Explore destination <span aria-hidden="true">→</span></a>
+              </div>
+            </div>
+          </article>
+          <article class="explore-card" data-name="Yukon Canada" data-region="north-america" data-map-region="americas" data-realm="international" data-vibe="nature,adventure" data-cost="2480" data-days="9" data-rating="9.5" data-match="11">
+            <a href="./destination.html?place=Yukon" class="explore-image"><img src="./YUKON,%20CANADA.avif" alt="Remote mountain wilderness in Canada's Yukon" loading="lazy" /><span class="image-label">Far beyond the ordinary</span><span class="image-open" aria-hidden="true">↗</span></a>
+            <div class="explore-card-body">
+              <div class="card-meta">
+                <span class="location">YUKON, CANADA</span><span class="rating">9.5 / 10</span>
+              </div>
+              <h3>
+                Where the Wild Begins
+              </h3>
+              <p>
+                Open horizons, big mountain country, and true off-grid quiet.
+              </p>
+              <div class="card-bottom">
+                <span>From <strong>$2,480</strong></span><a href="./destination.html?place=Yukon">Explore destination <span aria-hidden="true">→</span></a>
+              </div>
+            </div>
+          </article>
+          <article class="explore-card" data-name="Tokyo Japan" data-region="asia" data-map-region="asia" data-realm="international" data-vibe="culture,food" data-cost="1690" data-days="8" data-rating="9.4" data-match="12">
+            <a href="./destination.html?place=Japan" class="explore-image"><img src="./TOKYO,%20JAPAN.jpg" alt="Tokyo's bright city streets after dark" loading="lazy" /><span class="image-label">City after dark</span><span class="image-open" aria-hidden="true">↗</span></a>
+            <div class="explore-card-body">
+              <div class="card-meta">
+                <span class="location">TOKYO, JAPAN</span><span class="rating">9.4 / 10</span>
+              </div>
+              <h3>
+                Tokyo, at Your Own Pace
+              </h3>
+              <p>
+                Neighborhood mornings, late-night ramen, and a city of endless layers.
+              </p>
+              <div class="card-bottom">
+                <span>From <strong>$1,690</strong></span><a href="./destination.html?place=Japan">Explore destination <span aria-hidden="true">→</span></a>
+              </div>
+            </div>
+          </article>
+        </div>
+        <p class="empty-state" id="destination-empty" hidden>
+          No places match those choices. Try a broader search or clear a filter to start fresh.
+        </p>
+      </section>
+      <section class="container explore-cta">
+        <div>
+          <span class="eyebrow eyebrow-light"><span class="eyebrow-dot"></span>A trip that feels like yours</span>
+          <h2>
+            Let your instincts<br />choose the map.
+          </h2>
+        </div>
+        <a class="btn btn-orange" href="./preferences.html">Build your travel profile <span aria-hidden="true">→</span></a>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div class="footer-col brand-col">
+          <a href="./index.html" class="brand-logo text-white"><span class="wordmark-w">W</span><span>WANDERLUST</span></a>
+          <p class="brand-desc">
+            Bespoke itineraries, deep local connections, and unforgettable moments across six continents.
+          </p>
+        </div>
+        <div class="footer-col links-col">
+          <h4>
+            DESTINATIONS
+          </h4>
+          <ul>
+            <li>
+              <a href="./explore.html">Explore all</a>
+            </li>
+            <li>
+              <a href="./destination.html">Japan</a>
+            </li>
+            <li>
+              <a href="./destination.html">Mediterranean</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-col links-col">
+          <h4>
+            COMPANY
+          </h4>
+          <ul>
+            <li>
+              <a href="./about.html">Our story</a>
+            </li>
+            <li>
+              <a href="./preferences.html">Preferences</a>
+            </li>
+            <li>
+              <a href="./airlines.html">Flight partners</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-col contact-col">
+          <h4>
+            INQUIRIES
+          </h4>
+          <div class="contact-block">
+            <span class="contact-label">CONCIERGE DESK</span><a href="mailto:explore@wanderlustjourneys.com" class="contact-value">explore@wanderlustjourneys.com</a>
+          </div>
+          <div class="contact-block">
+            <span class="contact-label">DIRECT LINE</span><a href="tel:+18004926337" class="contact-value">+1 (800) 492-6337</a>
+          </div>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <p class="copyright">
+          © 2026 Wanderlust Journeys LLC. All rights reserved.
+        </p>
+        <div class="social-links">
+          <a href="./explore.html">Explore places</a><a href="./preferences.html">Edit preferences</a><a href="./airlines.html">Compare flights</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

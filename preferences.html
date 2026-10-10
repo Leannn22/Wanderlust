@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f7f7f5" />
+    <title>Travel preferences | Wanderlust</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <nav class="navbar" aria-label="Main navigation">
+      <div class="nav-container">
+        <a href="./index.html" class="brand-logo" aria-label="Wanderlust landing page"><span class="wordmark-w">W</span><span>WANDERLUST</span></a>
+        <ul class="nav-links" id="primary-navigation">
+          <li>
+            <a href="./index.html">Home</a>
+          </li>
+          <li>
+            <a href="./explore.html">Explore</a>
+          </li>
+          <li>
+            <a href="./preferences.html" class="active" aria-current="page">Preferences</a>
+          </li>
+          <li>
+            <a href="./destination.html">Destination</a>
+          </li>
+          <li>
+            <a href="./about.html">About</a>
+          </li>
+        </ul>
+        <div class="nav-actions">
+          <a class="btn btn-navy" href="./explore.html">Explore matches</a>
+        </div>
+        <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-controls="primary-navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </nav>
+    <main class="page-main preferences-page">
+      <section class="preferences-heading container text-center">
+        <span class="eyebrow"><span class="eyebrow-dot"></span>Build a shortlist that feels like yours</span>
+        <h1>Your Eclipse map</h1>
+        <p>Choose where you want to go—and where you would rather not. Your map choices shape your destination matches.</p>
+        <p class="realm-status" id="selected-realm" aria-live="polite">
+        </p>
+      </section>
+      <section class="container map-section" aria-label="Interactive preference map">
+        <div class="world-map" aria-label="Map of destination regions. Select a marker to cycle between prefer, avoid, and no preference.">
+          <svg class="map-land" viewBox="0 0 1000 440" role="img" aria-label="Illustrated world map with selectable destination regions" preserveAspectRatio="xMidYMid meet">
+            <path d="M94 93l28-28 46-13 24 18 36-6 31 18-9 24-29 8-13 24-38 8-20 30-31 5-13 33-23 13-4 37-18 10-14-25 6-34-12-19 12-30-12-25 23-19 1-29zM254 230l25 9 16 31-7 28 18 32-17 43-18 30-20-7-7-38-21-25 7-30-13-28 19-45zM389 80l34-22 55 5 35-18 43 7 17 19 45-3 36 21 40-5 37 12 14 22-31 13-8 26-22 13-35-5-14 25-39 2-25 28-29 4-20 26-24-1-22-35-26-4-7-28-29-19-8-31-28-9-15-23 5-22zM472 216l34-11 40 13 13 36-17 26-8 46-22 38-24-18-12-40-22-27 3-31-18-13zM705 268l49-15 51 9 31 18 38 4 18 27-30 20-47-8-27-18-47-2-37-14zM808 127l39-14 44 8 22 20-8 19-36 5-42-10-22-14z" />
+            <path class="map-island" d="M329 158l12-10 10 10-5 19-11 7-9-12zM614 307l12-8 9 9-7 14-10-2zM171 304l9-4 7 8-6 12-8-4zM874 251l9-5 8 6-6 10-9-2z" />
+          </svg>
+          <span class="map-sun" aria-hidden="true"></span>
+          <button class="map-pin pin-americas" type="button" data-map-region="americas" data-state="neutral" aria-label="Americas: no preference. Click to prefer this region." aria-pressed="false"><span aria-hidden="true">·</span><span class="map-pin-label">Americas</span></button>
+          <button class="map-pin pin-europe" type="button" data-map-region="europe" data-state="neutral" aria-label="Europe: no preference. Click to prefer this region." aria-pressed="false"><span aria-hidden="true">·</span><span class="map-pin-label">Europe</span></button>
+          <button class="map-pin pin-asia" type="button" data-map-region="asia" data-state="neutral" aria-label="Asia: no preference. Click to prefer this region." aria-pressed="false"><span aria-hidden="true">·</span><span class="map-pin-label">Asia</span></button>
+          <button class="map-pin pin-africa" type="button" data-map-region="africa" data-state="neutral" aria-label="Africa: no preference. Click to prefer this region." aria-pressed="false"><span aria-hidden="true">·</span><span class="map-pin-label">Africa</span></button>
+          <button class="map-pin pin-philippines" type="button" data-map-region="philippines" data-state="neutral" aria-label="Philippines: no preference. Click to prefer this region." aria-pressed="false"><span aria-hidden="true">·</span><span class="map-pin-label">Philippines</span></button>
+          <div class="map-legend">
+            <strong>REGION PREFERENCES</strong><span><i class="legend-dot legend-ideal"></i> Prefer · shown first</span><span><i class="legend-dot legend-block"></i> Avoid · hidden from matches</span><span><i class="legend-dot legend-neutral"></i> No preference</span><small>Click a region marker to cycle through these choices.</small>
+          </div>
+          <span class="map-coordinate">A SHORTLIST THAT FEELS LIKE YOURS</span>
+        </div>
+        <div class="map-summary" id="map-summary" aria-live="polite">No region preferences yet. All regions are included.</div>
+      </section>
+      <section class="container preferences-options">
+        <div class="section-header">
+          <span class="eyebrow"><span class="eyebrow-dot"></span>What makes a good trip for you?</span>
+          <h2>
+            What would you love in a trip?
+          </h2>
+          <p class="section-subtext">
+            Choose any interests that matter to you. Matches are updated when you apply.
+          </p>
+        </div>
+        <div class="preference-grid" role="group" aria-label="Choose travel preferences">
+          <button class="preference-card" type="button" data-preference="sandy-beaches" aria-pressed="false"><img src="./PALAWAN,%20PHILIPPINES.jpg" alt="" loading="lazy" /><span class="preference-card-footer"><span>Sandy beaches & swimming</span><span class="preference-mark" aria-hidden="true">+</span></span></button>
+          <button class="preference-card" type="button" data-preference="mountain-retreats" aria-pressed="false"><img src="./DOLOMITES,%20ITALY.jpg" alt="" loading="lazy" /><span class="preference-card-footer"><span>Mountain trails</span><span class="preference-mark" aria-hidden="true">+</span></span></button>
+          <button class="preference-card" type="button" data-preference="tropical-humidity" aria-pressed="false"><img src="./BALI,%20INDONESIA.jpg" alt="" loading="lazy" /><span class="preference-card-footer"><span>Tropical nature</span><span class="preference-mark" aria-hidden="true">+</span></span></button>
+          <button class="preference-card" type="button" data-preference="cultural-cities" aria-pressed="false"><img src="./TOKYO,%20JAPAN.jpg" alt="" loading="lazy" /><span class="preference-card-footer"><span>Culture & heritage</span><span class="preference-mark" aria-hidden="true">+</span></span></button>
+          <button class="preference-card" type="button" data-preference="desert-landscapes" aria-pressed="false"><img src="./MARRAKECH,%20MOROCCO.jpg" alt="" loading="lazy" /><span class="preference-card-footer"><span>Desert landscapes</span><span class="preference-mark" aria-hidden="true">+</span></span></button>
+          <button class="preference-card" type="button" data-preference="coastal-cliffs" aria-pressed="false"><img src="./AMALFI%20COAST,%20ITALY.jpg" alt="" loading="lazy" /><span class="preference-card-footer"><span>Coastal scenery</span><span class="preference-mark" aria-hidden="true">+</span></span></button>
+          <button class="preference-card" type="button" data-preference="food-culture" aria-pressed="false"><img src="./MARRAKECH,%20MOROCCO.jpg" alt="" loading="lazy" /><span class="preference-card-footer"><span>Food & local markets</span><span class="preference-mark" aria-hidden="true">+</span></span></button>
+          <button class="preference-card" type="button" data-preference="wildlife-nature" aria-pressed="false"><img src="./PATAGONIA,%20CHILE.jpg" alt="" loading="lazy" /><span class="preference-card-footer"><span>Wildlife & open nature</span><span class="preference-mark" aria-hidden="true">+</span></span></button>
+          <button class="preference-card" type="button" data-preference="easy-pace" aria-pressed="false"><img src="./KYOTO,%20JAPAN.jpg" alt="" loading="lazy" /><span class="preference-card-footer"><span>Slow, restorative days</span><span class="preference-mark" aria-hidden="true">+</span></span></button>
+          <button class="preference-card" type="button" data-preference="active-adventure" aria-pressed="false"><img src="./CAPPOCADIA,%20TURKEY.jpg" alt="" loading="lazy" /><span class="preference-card-footer"><span>Active adventures</span><span class="preference-mark" aria-hidden="true">+</span></span></button>
+        </div>
+        <div class="preference-submit">
+          <p id="preference-status" aria-live="polite">No interests selected. Choose a region or interest to personalize matches, or explore everything.</p>
+          <a class="btn btn-orange" id="apply-preferences" href="./explore.html">Apply preferences & explore <span aria-hidden="true">→</span></a>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div class="footer-col brand-col">
+          <a href="./index.html" class="brand-logo text-white"><span class="wordmark-w">W</span><span>WANDERLUST</span></a>
+          <p class="brand-desc">
+            Bespoke itineraries, deep local connections, and unforgettable moments across six continents.
+          </p>
+        </div>
+        <div class="footer-col links-col">
+          <h4>
+            DESTINATIONS
+          </h4>
+          <ul>
+            <li>
+              <a href="./explore.html">Explore all</a>
+            </li>
+            <li>
+              <a href="./destination.html">Japan</a>
+            </li>
+            <li>
+              <a href="./destination.html">Mediterranean</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-col links-col">
+          <h4>
+            COMPANY
+          </h4>
+          <ul>
+            <li>
+              <a href="./about.html">Our story</a>
+            </li>
+            <li>
+              <a href="./preferences.html">Preferences</a>
+            </li>
+            <li>
+              <a href="./airlines.html">Flight partners</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-col contact-col">
+          <h4>
+            INQUIRIES
+          </h4>
+          <div class="contact-block">
+            <span class="contact-label">CONCIERGE DESK</span><a href="mailto:explore@wanderlustjourneys.com" class="contact-value">explore@wanderlustjourneys.com</a>
+          </div>
+          <div class="contact-block">
+            <span class="contact-label">DIRECT LINE</span><a href="tel:+18004926337" class="contact-value">+1 (800) 492-6337</a>
+          </div>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <p class="copyright">
+          © 2026 Wanderlust Journeys LLC. All rights reserved.
+        </p>
+        <div class="social-links">
+          <a href="./explore.html">Explore places</a><a href="./preferences.html">Edit preferences</a><a href="./airlines.html">Compare flights</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

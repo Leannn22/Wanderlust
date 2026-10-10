@@ -1,0 +1,630 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f7f7f5" />
+    <meta name="description" content="Find thoughtful journeys shaped around your pace, interests, and sense of wonder." />
+    <title>Wanderlust | Tailored Journeys</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <dialog class="location-dialog" id="location-dialog" aria-labelledby="location-title">
+      <span class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>A more personal starting point</span>
+      <h2 id="location-title">Find your kind of away.</h2>
+      <p>Share your location to put nearby escapes first—or keep it private and choose local or international journeys yourself.</p>
+      <div class="privacy-note"><span aria-hidden="true">⌖</span><span>Your coordinates are used only in this tab, never saved or sent to a server, map provider, or advertiser.</span></div>
+      <p class="location-status" id="location-status" role="status" aria-live="polite">Your choice is always yours. Location is optional.</p>
+      <div class="location-actions">
+        <button class="btn btn-orange" id="use-location" type="button">Use my location <span aria-hidden="true">→</span></button>
+        <button class="location-skip" id="skip-location" type="button">Continue without location</button>
+      </div>
+    </dialog>
+    <!-- Site navigation -->
+    <nav class="navbar" aria-label="Main navigation">
+      <div class="nav-container">
+        <a href="./index.html" class="brand-logo" aria-label="Wanderlust home">
+          <span class="wordmark-w" aria-hidden="true">W</span>
+          <span>WANDERLUST</span>
+        </a>
+
+        <ul class="nav-links" id="primary-navigation">
+          <li><a href="./index.html" class="active" aria-current="page">Home</a></li>
+          <li><a href="./explore.html">Explore</a></li>
+          <li><a href="./preferences.html">Preferences</a></li>
+          <li><a href="./destination.html">Destination</a></li>
+          <li><a href="./about.html">About</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <a class="btn btn-navy" href="./airlines.html">Plan your escape</a>
+        </div>
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-label="Open navigation menu"
+          aria-controls="primary-navigation"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Travel type selector -->
+    <header class="hero" id="home">
+      <div class="hero-split">
+        <div class="hero-left"></div>
+        <div class="hero-right"></div>
+      </div>
+
+      <div class="hero-modal glass-panel" id="preferences">
+        <span class="eyebrow"
+          ><span class="eyebrow-dot" aria-hidden="true"></span>Tailored
+          journeys</span
+        >
+        <h1>Where to Next?</h1>
+        <p class="modal-subtext">
+          Experience places curated strictly for your state of mind. Select a
+          realm to start.
+        </p>
+
+        <div class="toggle-container">
+          <button class="toggle-btn active" type="button" data-realm="local" aria-pressed="true">
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            Travel Locally
+          </button>
+          <button class="toggle-btn inactive" type="button" data-realm="international" aria-pressed="false">
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path
+                d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+              ></path>
+            </svg>
+            Internationally
+          </button>
+        </div>
+
+        <a class="btn btn-orange btn-full" href="./explore.html" id="start-exploring"
+          >Explore nearby journeys</a
+        >
+        <p class="realm-feedback" id="realm-feedback" aria-live="polite">Nearby stays within about 650 km. Change your selection any time.</p>
+      </div>
+    </header>
+
+    <main>
+      <!-- Featured destinations -->
+      <section class="section" id="destinations">
+        <div class="container">
+          <div class="section-header split-header">
+            <div>
+              <span class="eyebrow"
+                ><span class="eyebrow-dot" aria-hidden="true"></span>Curated
+                previews</span
+              >
+              <h2 id="featured-heading">Top 10 nearby journeys</h2>
+            </div>
+            <div
+              class="carousel-controls"
+              role="group"
+              aria-label="Destination carousel controls"
+            >
+              <button
+                class="icon-btn inactive"
+                type="button"
+                aria-label="Previous destinations"
+                data-direction="-1"
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M15 18l-6-6 6-6" />
+                </svg>
+              </button>
+              <button
+                class="icon-btn active"
+                type="button"
+                aria-label="Next destinations"
+                data-direction="1"
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M9 18l6-6-6-6" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <div
+            class="grid-4 destination-track"
+            role="region"
+            aria-label="Featured destinations"
+            aria-roledescription="carousel"
+          >
+            <!-- Japan Card -->
+            <article class="dest-card" data-realm="international" data-place="Japan">
+              <div
+                class="card-img"
+                style="
+                  background-image: url(&quot;./KYOTO,%20JAPAN.jpg&quot;);
+                "
+              ></div>
+              <div class="card-content">
+                <div class="card-meta">
+                  <span class="location">KYOTO, JAPAN</span>
+                  <span class="rating">9.8/10</span>
+                </div>
+                <h3><a href="./destination.html?place=Japan">Kyoto Temple Lanes & Imperial Gardens</a></h3>
+              </div>
+            </article>
+
+            <!-- Chile Card -->
+            <article class="dest-card" data-realm="international" data-place="Patagonia">
+              <div
+                class="card-img"
+                style="
+                  background-image: url(&quot;./PATAGONIA,%20CHILE.jpg&quot;);
+                "
+              ></div>
+              <div class="card-content">
+                <div class="card-meta">
+                  <span class="location">PATAGONIA, CHILE</span>
+                  <span class="rating">9.6/10</span>
+                </div>
+                <h3><a href="./destination.html?place=Patagonia">Granite Walls & Blue Lakes</a></h3>
+              </div>
+            </article>
+
+            <!-- Italy Card -->
+            <article class="dest-card" data-realm="international" data-place="Amalfi">
+              <div
+                class="card-img"
+                style="
+                  background-image: url(&quot;./AMALFI%20COAST,%20ITALY.jpg&quot;);
+                "
+              ></div>
+              <div class="card-content">
+                <div class="card-meta">
+                  <span class="location">AMALFI COAST, ITALY</span>
+                  <span class="rating">9.4/10</span>
+                </div>
+                <h3><a href="./destination.html?place=Amalfi">Cliffs Draped in Yellow</a></h3>
+              </div>
+            </article>
+
+            <!-- Turkey Card -->
+            <article class="dest-card" data-realm="international" data-place="Cappadocia">
+              <div
+                class="card-img"
+                style="
+                  background-image: url(&quot;./CAPPOCADIA,%20TURKEY.jpg&quot;);
+                "
+              ></div>
+              <div class="card-content">
+                <div class="card-meta">
+                  <span class="location">CAPPADOCIA, TURKEY</span>
+                  <span class="rating">9.2/10</span>
+                </div>
+                <h3><a href="./destination.html?place=Cappadocia">Rising Over Fairy Chimneys</a></h3>
+              </div>
+            </article>
+            <article class="dest-card" data-realm="international" data-place="Santorini">
+              <div
+                class="card-img"
+                role="img"
+                aria-label="Coastal village in Santorini at sunset"
+                style="
+                  background-image: url(&quot;./SANTORINI,%20GREECE.jpg&quot;);
+                "
+              ></div>
+              <div class="card-content">
+                <div class="card-meta">
+                  <span class="location">SANTORINI, GREECE</span>
+                  <span class="rating">9.1/10</span>
+                </div>
+                <h3><a href="./destination.html?place=Santorini">Blue Domes by the Aegean</a></h3>
+              </div>
+            </article>
+            <article class="dest-card" data-realm="international" data-place="Bali">
+              <div
+                class="card-img"
+                role="img"
+                aria-label="Waterfall surrounded by tropical forest"
+                style="
+                  background-image: url(&quot;./BALI,%20INDONESIA.jpg&quot;);
+                "
+              ></div>
+              <div class="card-content">
+                <div class="card-meta">
+                  <span class="location">BALI, INDONESIA</span>
+                  <span class="rating">9.0/10</span>
+                </div>
+                <h3><a href="./destination.html?place=Bali">Quiet Mornings in Bali</a></h3>
+              </div>
+            </article>
+            <article class="dest-card" data-realm="international" data-place="Norway">
+              <div
+                class="card-img"
+                role="img"
+                aria-label="Northern lights over a Nordic landscape"
+                style="
+                  background-image: url(&quot;./TROMS%C3%98,%20NORWAY.jpg&quot;);
+                "
+              ></div>
+              <div class="card-content">
+                <div class="card-meta">
+                  <span class="location">TROMSØ, NORWAY</span>
+                  <span class="rating">9.5/10</span>
+                </div>
+                <h3><a href="./destination.html?place=Norway">Beneath the Northern Lights</a></h3>
+              </div>
+            </article>
+            <article class="dest-card" data-realm="international" data-place="Marrakech">
+              <div
+                class="card-img"
+                role="img"
+                aria-label="Desert dunes at golden hour"
+                style="
+                  background-image: url(&quot;./MARRAKECH,%20MOROCCO.jpg&quot;);
+                "
+              ></div>
+              <div class="card-content">
+                <div class="card-meta">
+                  <span class="location">MARRAKECH, MOROCCO</span>
+                  <span class="rating">9.3/10</span>
+                </div>
+                <h3><a href="./destination.html?place=Marrakech">Marrakech's Medina & Riads</a></h3>
+              </div>
+            </article>
+            <article class="dest-card" data-realm="international" data-place="Dolomites">
+              <div
+                class="card-img"
+                role="img"
+                aria-label="Alpine village beside a mountain lake"
+                style="
+                  background-image: url(&quot;./DOLOMITES,%20ITALY.jpg&quot;);
+                "
+              ></div>
+              <div class="card-content">
+                <div class="card-meta">
+                  <span class="location">DOLOMITES, ITALY</span>
+                  <span class="rating">9.7/10</span>
+                </div>
+                <h3><a href="./destination.html?place=Dolomites">Stillness in the Dolomites</a></h3>
+              </div>
+            </article>
+            <article class="dest-card" data-realm="international" data-place="Yukon">
+              <div
+                class="card-img"
+                role="img"
+                aria-label="Remote mountain wilderness in Canada's Yukon"
+                style="
+                  background-image: url(&quot;./YUKON,%20CANADA.avif&quot;);
+                "
+              ></div>
+              <div class="card-content">
+                <div class="card-meta">
+                  <span class="location">YUKON, CANADA</span>
+                  <span class="rating">9.5/10</span>
+                </div>
+                <h3><a href="./destination.html?place=Yukon">The Wild, Wide North</a></h3>
+              </div>
+            </article>
+            <article class="dest-card" data-realm="local" data-place="Palawan">
+              <div
+                class="card-img"
+                role="img"
+                aria-label="Tropical beach and turquoise water"
+                style="
+                  background-image: url(&quot;./PALAWAN,%20PHILIPPINES.jpg&quot;);
+                "
+              ></div>
+              <div class="card-content">
+                <div class="card-meta">
+                  <span class="location">PALAWAN, PHILIPPINES</span>
+                  <span class="rating">9.6/10</span>
+                </div>
+                <h3><a href="./destination.html?place=Palawan">Hidden Lagoons of Palawan</a></h3>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- How it works -->
+      <section class="section section-bordered" id="how-it-works">
+        <div class="container">
+          <div class="section-header text-center">
+            <span class="eyebrow"
+              ><span class="eyebrow-dot" aria-hidden="true"></span>The curation
+              engine</span
+            >
+            <h2>How It Works</h2>
+            <p class="section-subtext">
+              Leave standard templates behind. Our platform crafts intuitive
+              pathways that map directly to your aesthetic and physical
+              parameters.
+            </p>
+          </div>
+
+          <div class="grid-3 workflow-grid">
+            <div class="workflow-item">
+              <div class="icon-circle icon-orange">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+              </div>
+              <h4>1. Select Travel Type</h4>
+              <p>
+                Tell us whether you want local roadtrips or deep global
+                immersive travel.
+              </p>
+            </div>
+
+            <div class="workflow-item">
+              <div class="icon-circle icon-orange">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polygon
+                    points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"
+                  ></polygon>
+                </svg>
+              </div>
+              <h4>2. Filter Unwanted Vibes</h4>
+              <p>
+                Exclude crowd hotspots, overly touristy trails, and noise with
+                high fidelity.
+              </p>
+            </div>
+
+            <div class="workflow-item">
+              <div class="icon-circle icon-navy">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3z"
+                  ></path>
+                  <path
+                    d="M19 14l1.2 3.3L23 18l-2.8 1-1.2 3-1.1-3-2.9-1 2.9-.7L19 14z"
+                  ></path>
+                </svg>
+              </div>
+              <h4>3. Get Personalized Matches</h4>
+              <p>
+                Unlock handcrafted itineraries calibrated perfectly to your
+                personal aesthetic.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Why book with Wanderlust -->
+      <section class="section" id="why-wanderlust">
+        <div class="container">
+          <div class="section-header text-center">
+            <span class="eyebrow"
+              ><span class="eyebrow-dot" aria-hidden="true"></span>The
+              Wanderlust assurance</span
+            >
+            <h2>Why Book With Us?</h2>
+            <p class="section-subtext">
+              Transparent curation paired with high-tier logistical alliances.
+              We bring direct comparisons alongside unfiltered reviews.
+            </p>
+          </div>
+
+          <div class="grid-3 benefit-grid">
+            <div class="benefit-card">
+              <div class="benefit-icon">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="var(--c-orange)"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M16 3h5v5"></path>
+                  <path d="M4 20L21 3"></path>
+                  <path d="M21 16v5h-5"></path>
+                  <path d="M15 15l6 6"></path>
+                  <path d="M4 4l5 5"></path>
+                </svg>
+              </div>
+              <h4>Compare Side-by-Side</h4>
+              <p>
+                Get direct listings across Lumina Airways, Aetheria, and premium
+                lines without context swapping.
+              </p>
+            </div>
+
+            <div class="benefit-card">
+              <div class="benefit-icon">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="var(--c-orange)"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polygon
+                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                  ></polygon>
+                </svg>
+              </div>
+              <h4>Verified Traveler Ratings</h4>
+              <p>
+                Authentic insights from real explorers integrated directly into
+                maps and flight ledgers.
+              </p>
+            </div>
+
+            <div class="benefit-card">
+              <div class="benefit-icon">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="var(--c-orange)"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M12 2v20"></path>
+                  <path
+                    d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"
+                  ></path>
+                </svg>
+              </div>
+              <h4>Best Price Guarantee</h4>
+              <p>
+                Direct operator pricing. Unmatched execution. Luxury packages
+                unavailable on mass markets.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Contact and company information -->
+    <footer class="footer" id="about">
+      <div class="container footer-grid">
+        <div class="footer-col brand-col">
+          <a
+            href="./index.html"
+            class="brand-logo text-white"
+            aria-label="Wanderlust home"
+          >
+            <span class="wordmark-w" aria-hidden="true">W</span>
+            <span>WANDERLUST</span>
+          </a>
+          <p class="brand-desc">
+            Bespoke itineraries, deep local connections, and unforgettable
+            moments across six continents. Built on the love of exploration.
+          </p>
+        </div>
+
+        <div class="footer-col links-col">
+          <h4>DESTINATIONS</h4>
+          <ul>
+            <li><a href="./explore.html?region=east-asia">East Asia</a></li>
+            <li><a href="./explore.html?region=patagonia">Patagonia Wild</a></li>
+            <li><a href="./explore.html?region=mediterranean">Mediterranean Coast</a></li>
+            <li><a href="./explore.html?region=nordics">Nordics</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col links-col">
+          <h4>COMPANY</h4>
+          <ul>
+            <li><a href="./about.html">Our Story</a></li>
+            <li><a href="./about.html#approach">Atelier Guides</a></li>
+            <li><a href="./about.html#standards">Travel Safety</a></li>
+            <li><a href="./airlines.html">Flight Partners</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col contact-col">
+          <h4>INQUIRIES</h4>
+          <div class="contact-block">
+            <span class="contact-label">CONCIERGE DESK</span>
+            <a
+              href="mailto:explore@wanderlustjourneys.com"
+              class="contact-value"
+              >explore@wanderlustjourneys.com</a
+            >
+          </div>
+          <div class="contact-block">
+            <span class="contact-label">DIRECT LINE</span>
+            <a href="tel:+18004926337" class="contact-value"
+              >+1 (800) 492-6337</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <p class="copyright">
+          &copy; 2026 Wanderlust Journeys LLC. Registered Luxury Travel Operator
+          #40291. All rights reserved.
+        </p>
+        <ul class="social-links">
+          <li><a href="./explore.html">Explore places</a></li>
+          <li><a href="./preferences.html">Edit preferences</a></li>
+          <li><a href="./airlines.html">Compare flights</a></li>
+          <li><a href="./about.html">Our story</a></li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>
