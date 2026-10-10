@@ -2,184 +2,210 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#f7f7f5" />
-    <title>About us | Wanderlust</title>
-    <link rel="stylesheet" href="./styles.css" />
-    <script src="./script.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>About | Wanderlust</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+    <script src="data.js" defer></script>
+    <script src="script.js" defer></script>
   </head>
+
   <body>
-    <nav class="navbar" aria-label="Main navigation">
+    <!-- Navigation -->
+    <nav class="navbar">
       <div class="nav-container">
-        <a href="./index.html" class="brand-logo" aria-label="Wanderlust landing page"><span class="wordmark-w">W</span><span>WANDERLUST</span></a>
-        <ul class="nav-links" id="primary-navigation">
-          <li>
-            <a href="./index.html">Home</a>
-          </li>
-          <li>
-            <a href="./explore.html">Explore</a>
-          </li>
-          <li>
-            <a href="./preferences.html">Preferences</a>
-          </li>
-          <li>
-            <a href="./destination.html">Destination</a>
-          </li>
-          <li>
-            <a href="./about.html" class="active" aria-current="page">About</a>
-          </li>
+        <a href="index.html" class="brand-logo">
+          <span class="logo-mark">⌁</span>
+          WANDERLUST
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="explore.html">Explore</a></li>
+          <li><a href="preferences.html">Preferences</a></li>
+          <li><a href="destination.html">Destination</a></li>
+          <li><a href="about.html" class="active">About</a></li>
         </ul>
-        <div class="nav-actions">
-          <a class="btn btn-navy" href="./preferences.html">Plan your escape</a>
-        </div>
-        <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-controls="primary-navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+
+        <a href="preferences.html" class="btn btn-navy nav-button">
+          Plan your escape
+        </a>
+
+        <button class="menu-toggle" type="button" aria-label="Open menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
     </nav>
-    <main class="page-main about-page">
-      <section class="container about-intro">
-        <div>
-          <span class="eyebrow"><span class="eyebrow-dot"></span>Our philosophy</span>
-          <h1>
-            Reclaiming the art of intentional travel.
-          </h1>
-        </div>
-        <p>
-          Most itineraries begin with somewhere. We begin with you: what brings you joy, what you'd rather leave behind, and how you want to feel when the day is done.
-        </p>
-      </section>
-      <section class="container about-mosaic" aria-label="Moments that move us">
-        <img class="mosaic-one" src="./TOKYO,%20JAPAN.jpg" alt="Tokyo streets glowing after dark" />
-        <img class="mosaic-two" src="./PALAWAN,%20PHILIPPINES.jpg" alt="A hidden tropical beach in Palawan" />
-        <img class="mosaic-three" src="./KYOTO,%20JAPAN.jpg" alt="Autumn color around a Kyoto pagoda" />
-        <img class="mosaic-four" src="./PATAGONIA,%20CHILE.jpg" alt="Wild mountain peaks in Patagonia" />
-        <img class="mosaic-five" src="./AMALFI%20COAST,%20ITALY.jpg" alt="The sunlit Mediterranean coast" />
-        <span class="mosaic-note">Curiosity through<br />consideration.</span>
-      </section>
-      <section class="section about-principles" id="approach">
+
+    <main>
+      <section class="page-section">
         <div class="container">
-          <div class="section-header about-section-header">
-            <span class="eyebrow"><span class="eyebrow-dot"></span>Our commitments</span>
-            <h2>
-              How we remap the journey
-            </h2>
+          <div class="about-intro">
+            <div>
+              <span class="eyebrow"
+                ><span class="eyebrow-dot"></span>Our Philosophy</span
+              >
+              <h1 style="margin-top: 10px">
+                Reclaiming the Art of Intentional Travel.
+              </h1>
+            </div>
+            <p class="muted">
+              Most travel engines treat journeys as math problems. Wanderlust
+              treats them as a study in what to leave out — so the places you do
+              see feel unmistakably yours.
+            </p>
           </div>
-          <div class="principle-grid">
-            <article class="principle-card principle-feature">
-              <span class="principle-number">01</span><span class="principle-icon">⌗</span>
-              <h3>
-                Elimination first
-              </h3>
-              <p>
-                We filter out your exact dealbreakers—hard, noisy crowds, extreme heat, or the all-too-familiar tourist trap. The most meaningful journey begins by removing noise, so we let your matches shine.
-              </p>
-              <img src="./MARRAKECH,%20MOROCCO.jpg" alt="A quiet desert escape away from the busy city" loading="lazy" />
-            </article>
-            <article class="principle-card">
-              <span class="principle-number">02</span><span class="principle-icon">▣</span>
-              <h3>
-                Cultural reverence
-              </h3>
-              <p>
-                Every custom-run itinerary maps local etiquette, cultural respect parameters, and seasonal micro-guides to protect and support the heritage of communities we visit.
-              </p>
-            </article>
-            <article class="principle-card">
-              <span class="principle-number">03</span><span class="principle-icon">◎</span>
-              <h3>
-                Direct transparency
-              </h3>
-              <p>
-                Direct logistical alliances with premium airlines and hospitality operators mean authentic verified ratings, competitive pricing, and no hidden fees.
-              </p>
-            </article>
+
+          <div class="collage">
+            <span class="collage-quote">"Curation through elimination."</span>
           </div>
         </div>
       </section>
-      <section class="about-stats">
+
+      <section class="page-section" style="padding-top: 0">
+        <div class="container">
+          <span class="eyebrow"
+            ><span class="eyebrow-dot"></span>Our Process</span
+          >
+          <h2 class="section-title">How We Remap the Journey</h2>
+
+          <div class="remap-grid">
+            <div class="card-white remap-card">
+              <span class="num">01</span>
+              <div class="benefit-icon">◎</div>
+              <h3>Elimination First</h3>
+              <p>
+                We filter out what you don't want before we suggest anything —
+                crowds, climates and clichés disappear from your results.
+              </p>
+              <div class="remap-img"></div>
+            </div>
+
+            <div class="remap-stack">
+              <div class="card-white remap-card">
+                <span class="num">02</span>
+                <div class="benefit-icon">✦</div>
+                <h3>Cultural Reverence</h3>
+                <p>
+                  Every itinerary is built with local guides who protect the
+                  places they share.
+                </p>
+              </div>
+              <div class="card-white remap-card">
+                <span class="num">03</span>
+                <div class="benefit-icon">$</div>
+                <h3>Direct Transparency</h3>
+                <p>
+                  Operator pricing, no hidden markups, and partners you can
+                  compare side by side.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="page-section section-bordered" style="background: white">
         <div class="container stats-row">
-          <div>
-            <strong>100%</strong><span>AD-FREE RECOMMENDATIONS</span>
+          <div class="stat">
+            <strong>100%</strong><span>Of trips eliminate noise</span>
           </div>
-          <div>
-            <strong>42+</strong><span>COUNTRIES CURATED</span>
+          <div class="stat">
+            <strong>42+</strong><span>Countries curated</span>
           </div>
-          <div>
-            <strong>0</strong><span>TOURIST-TRAP ITINERARIES</span>
+          <div class="stat">
+            <strong>0</strong><span>Third-party markups</span>
           </div>
         </div>
       </section>
-      <section class="section about-end" id="standards">
-        <div class="container about-end-panel">
-          <span class="eyebrow eyebrow-light"><span class="eyebrow-dot"></span>Made with care, traveled with care</span>
-          <h2>
-            Ready to find your realm?
-          </h2>
-          <p>
-            Skip the generic lists and build a travel profile unique to your state of mind.
-          </p>
-          <a class="btn btn-orange" href="./preferences.html">Set your preferences <span aria-hidden="true">→</span></a>
+
+      <section class="page-section">
+        <div class="container">
+          <div class="cta-dark">
+            <h2>Ready to Find Your Realm?</h2>
+            <p>
+              Skip the generic lists and discover places that feel tailor-made
+              for your state of mind.
+            </p>
+            <a href="preferences.html" class="btn btn-coral"
+              >Set Your Preferences →</a
+            >
+          </div>
         </div>
       </section>
     </main>
+
+    <!-- Footer -->
     <footer class="footer">
       <div class="container footer-grid">
         <div class="footer-col brand-col">
-          <a href="./index.html" class="brand-logo text-white"><span class="wordmark-w">W</span><span>WANDERLUST</span></a>
+          <a href="index.html" class="brand-logo text-white">
+            <span class="logo-mark">⌁</span>
+            WANDERLUST
+          </a>
+
           <p class="brand-desc">
-            Bespoke itineraries, deep local connections, and unforgettable moments across six continents.
+            Bespoke itineraries, deep local connections, and unforgettable
+            moments across six continents.
           </p>
         </div>
-        <div class="footer-col links-col">
-          <h4>
-            DESTINATIONS
-          </h4>
+
+        <div class="footer-col">
+          <h4>DESTINATIONS</h4>
+
           <ul>
-            <li>
-              <a href="./explore.html">Explore all</a>
-            </li>
-            <li>
-              <a href="./destination.html">Japan</a>
-            </li>
-            <li>
-              <a href="./explore.html">Mediterranean</a>
-            </li>
+            <li>East Asia</li>
+            <li>Patagonia Wild</li>
+            <li>Mediterranean Coast</li>
+            <li>Nordics</li>
           </ul>
         </div>
-        <div class="footer-col links-col">
-          <h4>
-            COMPANY
-          </h4>
+
+        <div class="footer-col">
+          <h4>COMPANY</h4>
+
           <ul>
-            <li>
-              <a href="./about.html">Our story</a>
-            </li>
-            <li>
-              <a href="./preferences.html">Preferences</a>
-            </li>
-            <li>
-              <a href="./airlines.html">Flight partners</a>
-            </li>
+            <li>Our Story</li>
+            <li>Atelier Guides</li>
+            <li>Travel Safety</li>
+            <li>Private Jet Charters</li>
           </ul>
         </div>
-        <div class="footer-col contact-col">
-          <h4>
-            INQUIRIES
-          </h4>
+
+        <div class="footer-col">
+          <h4>INQUIRIES</h4>
+
           <div class="contact-block">
-            <span class="contact-label">CONCIERGE DESK</span><a href="mailto:explore@wanderlustjourneys.com" class="contact-value">explore@wanderlustjourneys.com</a>
+            <span class="contact-label">CONCIERGE DESK</span>
+            <span> explore@wanderlustjourneys.com </span>
           </div>
+
           <div class="contact-block">
-            <span class="contact-label">DIRECT LINE</span><a href="tel:+18004926337" class="contact-value">+1 (800) 492-6337</a>
+            <span class="contact-label">DIRECT LINE</span>
+            <span> +1 (800) 492-6337 </span>
           </div>
         </div>
       </div>
+
       <div class="container footer-bottom">
-        <p class="copyright">
-          © 2026 Wanderlust Journeys LLC. All rights reserved.
-        </p>
-        <div class="social-links">
-          <a href="./explore.html">Explore places</a><a href="./preferences.html">Edit preferences</a><a href="./airlines.html">Compare flights</a>
-        </div>
+        <p>© 2026 Wanderlust Journeys LLC. All rights reserved.</p>
+
+        <ul class="social-links">
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Pinterest</a></li>
+          <li><a href="#">Vimeo</a></li>
+          <li><a href="#">Journal</a></li>
+        </ul>
       </div>
     </footer>
   </body>

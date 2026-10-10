@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Booking | Wanderlust</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+    <script src="data.js" defer></script>
+    <script src="script.js" defer></script>
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="index.html" class="brand-logo">
+          <span class="logo-mark">⌁</span>
+          WANDERLUST
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="explore.html">Explore</a></li>
+          <li><a href="preferences.html">Preferences</a></li>
+          <li><a href="destination.html">Destination</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+
+        <a href="preferences.html" class="btn btn-navy nav-button">
+          Plan your escape
+        </a>
+
+        <button class="menu-toggle" type="button" aria-label="Open menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+
+    <main class="page-section">
+      <div class="container">
+        <div class="section-header text-center" style="margin-bottom: 0">
+          <span class="eyebrow"
+            ><span class="eyebrow-dot"></span>Trip Overview</span
+          >
+          <h1 class="page-title">
+            Immersive Journeys, Tailored to Your Perspective
+          </h1>
+        </div>
+
+        <!-- Trip summary: details are shown for reference, only the dates can be changed -->
+        <div
+          class="card-white search-bar"
+          role="group"
+          aria-label="Trip details"
+        >
+          <div class="search-field">
+            <span class="field-label">From</span>
+            <span class="field-value">Philippines, Clark (CRK)</span>
+          </div>
+          <div class="search-field">
+            <span class="field-label">To</span>
+            <span class="field-value" id="to">Tokyo Haneda (HND)</span>
+          </div>
+          <div class="search-field editable">
+            <label for="depart">Departure Date</label>
+            <input id="depart" type="date" value="2026-12-14" />
+          </div>
+          <div class="search-field editable">
+            <label for="return">Return Date</label>
+            <input id="return" type="date" value="2026-12-28" />
+          </div>
+          <div class="search-field">
+            <span class="field-label">Passengers</span>
+            <span class="field-value">2 Passengers, Economy</span>
+          </div>
+        </div>
+
+        <!-- Airlines -->
+        <div
+          class="split-header"
+          style="margin-bottom: 18px; align-items: center"
+        >
+          <h2 class="section-title" style="margin: 0; font-size: 1.4rem">
+            Compare Affiliated Airlines
+          </h2>
+          <span class="muted" style="font-size: 0.7rem"
+            >Showing 4 premium partners</span
+          >
+        </div>
+
+        <p class="info-note">
+          <span class="info-icon" aria-hidden="true">i</span>For your
+          information only: these fares are shown so you can compare, not to
+          book.
+        </p>
+
+        <div class="airline-list">
+          <div class="card-white airline-row">
+            <div class="airline-logo">L</div>
+            <div>
+              <h4>Luminara Airways</h4>
+              <small>★ 4.9 · 2.1k reviews</small>
+            </div>
+            <div class="airline-meta">Direct Flight<br />◷ 3h 50m</div>
+            <div class="airline-price">
+              <s>$1,729</s><strong>$1,489</strong
+              ><small style="color: #e95b3a">Save $240 today</small>
+            </div>
+          </div>
+          <div class="card-white airline-row">
+            <div class="airline-logo">A</div>
+            <div>
+              <h4>Aetheria Air</h4>
+              <small>★ 4.7 · 1.4k reviews</small>
+            </div>
+            <div class="airline-meta">Direct Flight<br />◷ 4h 05m</div>
+            <div class="airline-price">
+              <s>$1,790</s><strong>$1,612</strong
+              ><small style="color: #e95b3a">Save $178 today</small>
+            </div>
+          </div>
+          <div class="card-white airline-row">
+            <div class="airline-logo">N</div>
+            <div>
+              <h4>Nordic Horizon</h4>
+              <small>★ 4.6 · 980 reviews</small>
+            </div>
+            <div class="airline-meta">Direct Flight<br />◷ 4h 10m</div>
+            <div class="airline-price">
+              <s>$1,500</s><strong>$1,350</strong
+              ><small style="color: #e95b3a">Lowest price</small>
+            </div>
+          </div>
+          <div class="card-white airline-row">
+            <div class="airline-logo">M</div>
+            <div>
+              <h4>Meridian Club</h4>
+              <small>★ 4.9 · 640 reviews</small>
+            </div>
+            <div class="airline-meta">Direct Flight<br />◷ 3h 45m</div>
+            <div class="airline-price">
+              <s>$2,100</s><strong>$1,890</strong
+              ><small style="color: #e95b3a">Includes lounge access</small>
+            </div>
+          </div>
+        </div>
+
+        <p class="muted info-footnote">
+          Fares are shown for reference only. Taxes and fees included for all
+          listed flights.
+        </p>
+      </div>
+    </main>
+  </body>
+</html>

@@ -11,7 +11,12 @@
   <body>
     <nav class="navbar" aria-label="Main navigation">
       <div class="nav-container">
-        <a href="./index.html" class="brand-logo" aria-label="Wanderlust landing page"><span class="wordmark-w">W</span><span>WANDERLUST</span></a>
+        <a
+          href="./index.html"
+          class="brand-logo"
+          aria-label="Wanderlust landing page"
+          ><span class="wordmark-w">W</span><span>WANDERLUST</span></a
+        >
         <ul class="nav-links" id="primary-navigation">
           <li>
             <a href="./index.html">Home</a>
@@ -32,175 +37,303 @@
         <div class="nav-actions">
           <a class="btn btn-navy" href="./explore.html">Find a destination</a>
         </div>
-        <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-controls="primary-navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-label="Open navigation menu"
+          aria-controls="primary-navigation"
+          aria-expanded="false"
+        >
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </nav>
     <main class="page-main airlines-page">
       <section class="airlines-heading container text-center">
-        <span class="eyebrow"><span class="eyebrow-dot"></span>Exclusive air travel</span>
-        <h1>
-          Immersive journeys, tailored to your perspective
-        </h1>
+        <span class="eyebrow"
+          ><span class="eyebrow-dot"></span>Exclusive air travel</span
+        >
+        <h1>Immersive journeys, tailored to your perspective</h1>
       </section>
       <section class="container flight-search-wrap">
         <form id="flight-search" class="flight-search">
-          <label><span>FROM</span><span class="field-icon">⌖</span><input name="origin" id="flight-origin" value="Clark, Philippines (CRK)" required aria-label="Departure airport" /></label>
-          <label><span>TO</span><span class="field-icon">↗</span><input name="destination" id="flight-destination" value="Tokyo Haneda (HND)" required aria-label="Arrival airport" /></label>
-          <label><span>DEPARTURE DATE</span><span class="field-icon">▣</span><input type="date" name="depart" id="flight-depart" required aria-label="Departure date" /></label>
-          <label><span>RETURN DATE</span><span class="field-icon">▣</span><input type="date" name="return" id="flight-return" required aria-label="Return date" /></label>
-          <label><span>PASSENGERS</span><span class="field-icon">♙</span><select name="passengers" id="flight-passengers" aria-label="Number of passengers"><option value="1">1 Passenger</option><option value="2" selected>2 Passengers</option><option value="3">3 Passengers</option><option value="4">4 Passengers</option><option value="5">5 Passengers</option><option value="6">6 Passengers</option></select></label>
-          <button class="flight-search-submit" type="submit" aria-label="Update flight comparison">↗</button>
+          <label
+            ><span>FROM</span><span class="field-icon">⌖</span
+            ><input
+              name="origin"
+              id="flight-origin"
+              value="Clark, Philippines (CRK)"
+              required
+              aria-label="Departure airport"
+          /></label>
+          <label
+            ><span>TO</span><span class="field-icon">↗</span
+            ><input
+              name="destination"
+              id="flight-destination"
+              value="Tokyo Haneda (HND)"
+              required
+              aria-label="Arrival airport"
+          /></label>
+          <label
+            ><span>DEPARTURE DATE</span><span class="field-icon">▣</span
+            ><input
+              type="date"
+              name="depart"
+              id="flight-depart"
+              required
+              aria-label="Departure date"
+          /></label>
+          <label
+            ><span>RETURN DATE</span><span class="field-icon">▣</span
+            ><input
+              type="date"
+              name="return"
+              id="flight-return"
+              required
+              aria-label="Return date"
+          /></label>
+          <label
+            ><span>PASSENGERS</span><span class="field-icon">♙</span
+            ><select
+              name="passengers"
+              id="flight-passengers"
+              aria-label="Number of passengers"
+            >
+              <option value="1">1 Passenger</option>
+              <option value="2" selected>2 Passengers</option>
+              <option value="3">3 Passengers</option>
+              <option value="4">4 Passengers</option>
+              <option value="5">5 Passengers</option>
+              <option value="6">6 Passengers</option>
+            </select></label
+          >
+          <button
+            class="flight-search-submit"
+            type="submit"
+            aria-label="Update flight comparison"
+          >
+            ↗
+          </button>
         </form>
         <p class="flight-note" id="flight-status" aria-live="polite">
-          Showing handpicked premium routes · Sample fares are indicative and subject to provider confirmation.
+          Showing handpicked premium routes · Sample fares are indicative and
+          subject to provider confirmation.
         </p>
       </section>
       <section class="container airline-results">
         <div class="airline-section-heading">
-          <h2>
-            Compare affiliated airlines
-          </h2>
-          <label class="sort-field">Sort by <select id="flight-sort" aria-label="Sort flight options"><option value="recommended">Recommended</option><option value="price">Lowest price</option><option value="duration">Shortest journey</option></select></label>
+          <h2>Compare affiliated airlines</h2>
+          <label class="sort-field"
+            >Sort by
+            <select id="flight-sort" aria-label="Sort flight options">
+              <option value="recommended">Recommended</option>
+              <option value="price">Lowest price</option>
+              <option value="duration">Shortest journey</option>
+            </select></label
+          >
         </div>
         <div class="airline-list" id="airline-list">
-          <article class="airline-card" data-price="1489" data-duration="705" data-rank="1">
-            <div class="airline-logo">
-              L
-            </div>
+          <article
+            class="airline-card"
+            data-price="1489"
+            data-duration="705"
+            data-rank="1"
+          >
+            <div class="airline-logo">L</div>
             <div class="airline-name">
-              <strong>Luminar Airways</strong><span>★ 4.8 <small>/ 5.0</small></span>
+              <strong>Luminar Airways</strong
+              ><span>★ 4.8 <small>/ 5.0</small></span>
             </div>
             <div class="airline-route">
               <strong>Direct flight</strong><span>◷ 11h 45m</span>
             </div>
             <div class="airline-price">
-              <small>$1,720</small><strong>$1,489</strong><span>Incl. lounge access</span>
+              <small>$1,720</small><strong>$1,489</strong
+              ><span>Incl. lounge access</span>
             </div>
-            <button type="button" class="airline-select" data-airline="Luminar Airways" data-fare="1,489" aria-label="Choose Luminar Airways">›</button>
+            <button
+              type="button"
+              class="airline-select"
+              data-airline="Luminar Airways"
+              data-fare="1,489"
+              aria-label="Choose Luminar Airways"
+            >
+              ›
+            </button>
           </article>
-          <article class="airline-card" data-price="1612" data-duration="730" data-rank="2">
-            <div class="airline-logo">
-              A
-            </div>
+          <article
+            class="airline-card"
+            data-price="1612"
+            data-duration="730"
+            data-rank="2"
+          >
+            <div class="airline-logo">A</div>
             <div class="airline-name">
-              <strong>Aetheria Air</strong><span>★ 4.7 <small>/ 5.0</small></span>
+              <strong>Aetheria Air</strong
+              ><span>★ 4.7 <small>/ 5.0</small></span>
             </div>
             <div class="airline-route">
               <strong>Direct flight</strong><span>◷ 12h 10m</span>
             </div>
             <div class="airline-price">
-              <small></small><strong>$1,612</strong><span>Private suite optional</span>
+              <small></small><strong>$1,612</strong
+              ><span>Private suite optional</span>
             </div>
-            <button type="button" class="airline-select" data-airline="Aetheria Air" data-fare="1,612" aria-label="Choose Aetheria Air">›</button>
+            <button
+              type="button"
+              class="airline-select"
+              data-airline="Aetheria Air"
+              data-fare="1,612"
+              aria-label="Choose Aetheria Air"
+            >
+              ›
+            </button>
           </article>
-          <article class="airline-card" data-price="1350" data-duration="795" data-rank="3">
-            <div class="airline-logo">
-              N
-            </div>
+          <article
+            class="airline-card"
+            data-price="1350"
+            data-duration="795"
+            data-rank="3"
+          >
+            <div class="airline-logo">N</div>
             <div class="airline-name">
-              <strong>Nordic Horizon</strong><span>★ 4.6 <small>/ 5.0</small></span>
+              <strong>Nordic Horizon</strong
+              ><span>★ 4.6 <small>/ 5.0</small></span>
             </div>
             <div class="airline-route">
               <strong>Direct flight</strong><span>◷ 13h 15m</span>
             </div>
             <div class="airline-price">
-              <small></small><strong>$1,350</strong><span>Eco-efficient fleet</span>
+              <small></small><strong>$1,350</strong
+              ><span>Eco-efficient fleet</span>
             </div>
-            <button type="button" class="airline-select" data-airline="Nordic Horizon" data-fare="1,350" aria-label="Choose Nordic Horizon">›</button>
+            <button
+              type="button"
+              class="airline-select"
+              data-airline="Nordic Horizon"
+              data-fare="1,350"
+              aria-label="Choose Nordic Horizon"
+            >
+              ›
+            </button>
           </article>
-          <article class="airline-card" data-price="1890" data-duration="710" data-rank="4">
-            <div class="airline-logo">
-              M
-            </div>
+          <article
+            class="airline-card"
+            data-price="1890"
+            data-duration="710"
+            data-rank="4"
+          >
+            <div class="airline-logo">M</div>
             <div class="airline-name">
-              <strong>Meridian Club</strong><span>★ 4.5 <small>/ 5.0</small></span>
+              <strong>Meridian Club</strong
+              ><span>★ 4.5 <small>/ 5.0</small></span>
             </div>
             <div class="airline-route">
               <strong>Direct flight</strong><span>◷ 11h 50m</span>
             </div>
             <div class="airline-price">
-              <small>$2,100</small><strong>$1,890</strong><span>Michelin-starred dining</span>
+              <small>$2,100</small><strong>$1,890</strong
+              ><span>Michelin-starred dining</span>
             </div>
-            <button type="button" class="airline-select" data-airline="Meridian Club" data-fare="1,890" aria-label="Choose Meridian Club">›</button>
+            <button
+              type="button"
+              class="airline-select"
+              data-airline="Meridian Club"
+              data-fare="1,890"
+              aria-label="Choose Meridian Club"
+            >
+              ›
+            </button>
           </article>
         </div>
       </section>
       <section class="container booking-assurance">
         <div>
-          <span class="eyebrow"><span class="eyebrow-dot"></span>One clear view</span>
-          <h2>
-            Better journeys start with a better comparison.
-          </h2>
+          <span class="eyebrow"
+            ><span class="eyebrow-dot"></span>One clear view</span
+          >
+          <h2>Better journeys start with a better comparison.</h2>
         </div>
         <p>
-          Compare curated partner options in one place. Choose a route to prepare a no-obligation request with our concierge team. Fares shown are illustrative, not live inventory.
+          Compare curated partner options in one place. Choose a route to
+          prepare a no-obligation request with our concierge team. Fares shown
+          are illustrative, not live inventory.
         </p>
       </section>
       <section class="container secure-journey-wrap">
-        <a class="btn btn-orange secure-journey" href="mailto:explore@wanderlustjourneys.com?subject=Flight%20planning%20request">Speak with a travel specialist <span aria-hidden="true">→</span></a>
+        <a
+          class="btn btn-orange secure-journey"
+          href="mailto:explore@wanderlustjourneys.com?subject=Flight%20planning%20request"
+          >Speak with a travel specialist <span aria-hidden="true">→</span></a
+        >
         <p>
-          Flexible booking options and premium lounge access included with all curated flights.
+          Flexible booking options and premium lounge access included with all
+          curated flights.
         </p>
       </section>
-      <dialog class="flight-dialog" id="flight-dialog" aria-labelledby="dialog-title">
+      <dialog
+        class="flight-dialog"
+        id="flight-dialog"
+        aria-labelledby="dialog-title"
+      >
         <form method="dialog">
-          <button class="dialog-close" type="submit" aria-label="Close flight details">×</button>
+          <button
+            class="dialog-close"
+            type="submit"
+            aria-label="Close flight details"
+          >
+            ×
+          </button>
         </form>
-        <span class="eyebrow"><span class="eyebrow-dot"></span>Your selected partner</span>
-        <h2 id="dialog-title">
-          Flight request ready
-        </h2>
-        <p class="dialog-intro">
-          Your no-obligation request will include:
-        </p>
+        <span class="eyebrow"
+          ><span class="eyebrow-dot"></span>Your selected partner</span
+        >
+        <h2 id="dialog-title">Flight request ready</h2>
+        <p class="dialog-intro">Your no-obligation request will include:</p>
         <dl class="dialog-summary">
           <div>
-            <dt>
-              Airline
-            </dt>
-            <dd id="dialog-airline">
-            </dd>
+            <dt>Airline</dt>
+            <dd id="dialog-airline"></dd>
           </div>
           <div>
-            <dt>
-              Route
-            </dt>
-            <dd id="dialog-route">
-            </dd>
+            <dt>Route</dt>
+            <dd id="dialog-route"></dd>
           </div>
           <div>
-            <dt>
-              Indicative fare / person
-            </dt>
-            <dd id="dialog-fare">
-            </dd>
+            <dt>Indicative fare / person</dt>
+            <dd id="dialog-fare"></dd>
           </div>
           <div>
-            <dt>
-              Travel dates
-            </dt>
-            <dd id="dialog-dates">
-            </dd>
+            <dt>Travel dates</dt>
+            <dd id="dialog-dates"></dd>
           </div>
         </dl>
         <p class="dialog-disclaimer">
-          This is a sample comparison. A travel specialist will confirm availability and final pricing before anything is booked.
+          This is a sample comparison. A travel specialist will confirm
+          availability and final pricing before anything is booked.
         </p>
-        <a class="btn btn-orange dialog-request" id="dialog-request" href="mailto:explore@wanderlustjourneys.com">Request a quote <span aria-hidden="true">→</span></a>
+        <a
+          class="btn btn-orange dialog-request"
+          id="dialog-request"
+          href="mailto:explore@wanderlustjourneys.com"
+          >Request a quote <span aria-hidden="true">→</span></a
+        >
       </dialog>
     </main>
     <footer class="footer">
       <div class="container footer-grid">
         <div class="footer-col brand-col">
-          <a href="./index.html" class="brand-logo text-white"><span class="wordmark-w">W</span><span>WANDERLUST</span></a>
+          <a href="./index.html" class="brand-logo text-white"
+            ><span class="wordmark-w">W</span><span>WANDERLUST</span></a
+          >
           <p class="brand-desc">
-            Bespoke itineraries, deep local connections, and unforgettable moments across six continents.
+            Bespoke itineraries, deep local connections, and unforgettable
+            moments across six continents.
           </p>
         </div>
         <div class="footer-col links-col">
-          <h4>
-            DESTINATIONS
-          </h4>
+          <h4>DESTINATIONS</h4>
           <ul>
             <li>
               <a href="./explore.html">Explore all</a>
@@ -214,9 +347,7 @@
           </ul>
         </div>
         <div class="footer-col links-col">
-          <h4>
-            COMPANY
-          </h4>
+          <h4>COMPANY</h4>
           <ul>
             <li>
               <a href="./about.html">Our story</a>
@@ -230,14 +361,20 @@
           </ul>
         </div>
         <div class="footer-col contact-col">
-          <h4>
-            INQUIRIES
-          </h4>
+          <h4>INQUIRIES</h4>
           <div class="contact-block">
-            <span class="contact-label">CONCIERGE DESK</span><a href="mailto:explore@wanderlustjourneys.com" class="contact-value">explore@wanderlustjourneys.com</a>
+            <span class="contact-label">CONCIERGE DESK</span
+            ><a
+              href="mailto:explore@wanderlustjourneys.com"
+              class="contact-value"
+              >explore@wanderlustjourneys.com</a
+            >
           </div>
           <div class="contact-block">
-            <span class="contact-label">DIRECT LINE</span><a href="tel:+18004926337" class="contact-value">+1 (800) 492-6337</a>
+            <span class="contact-label">DIRECT LINE</span
+            ><a href="tel:+18004926337" class="contact-value"
+              >+1 (800) 492-6337</a
+            >
           </div>
         </div>
       </div>
@@ -246,7 +383,9 @@
           © 2026 Wanderlust Journeys LLC. All rights reserved.
         </p>
         <div class="social-links">
-          <a href="./explore.html">Explore places</a><a href="./preferences.html">Edit preferences</a><a href="./airlines.html">Compare flights</a>
+          <a href="./explore.html">Explore places</a
+          ><a href="./preferences.html">Edit preferences</a
+          ><a href="./airlines.html">Compare flights</a>
         </div>
       </div>
     </footer>
